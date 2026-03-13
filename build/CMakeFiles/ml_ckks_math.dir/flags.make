@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I/opt/homebrew/opt/libomp/include -isystem /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include
+CXX_INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I/opt/homebrew/opt/libomp/include -isystem /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include
 
 CXX_FLAGSarm64 =   -Wall -Werror -DOPENFHE_VERSION=1.4.2 -O3 -DMATHBACKEND=4 -Xpreprocessor -fopenmp -lomp -Wno-unused-command-line-argument -Xpreprocessor -fopenmp -lomp -Wno-unused-command-line-argument -std=c++20 -arch arm64 -Wno-missing-braces
 

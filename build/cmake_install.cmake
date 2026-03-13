@@ -1,4 +1,4 @@
-# Install script for directory: /Users/bellian/CEPP/ml_ckks_math
+# Install script for directory: /Users/bellian/CEPP/FHE-Math-For-DL
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,14 +39,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-build/cmake_install.cmake")
+  include("/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/bellian/CEPP/ml_ckks_math/build/install_local_manifest.txt"
+  file(WRITE "/Users/bellian/CEPP/FHE-Math-For-DL/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -62,6 +62,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/bellian/CEPP/ml_ckks_math/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/bellian/CEPP/FHE-Math-For-DL/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -1,5 +1,5 @@
 CMakeFiles/ml_ckks_math.dir/main.cc.o: \
-  /Users/bellian/CEPP/ml_ckks_math/main.cc \
+  /Users/bellian/CEPP/FHE-Math-For-DL/main.cc \
   /usr/local/include/openfhe/pke/openfhe.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -1307,54 +1307,54 @@ CMakeFiles/ml_ckks_math.dir/main.cc.o: \
   /usr/local/include/openfhe/pke/scheme/bgvrns/gen-cryptocontext-bgvrns.h \
   /usr/local/include/openfhe/pke/scheme/bgvrns/gen-cryptocontext-bgvrns-internal.h \
   /usr/local/include/openfhe/pke/scheme/bgvrns/gen-cryptocontext-bgvrns-params.h \
-  /Users/bellian/CEPP/ml_ckks_math/mlp.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/glaze.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/binary.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/binary/header.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/inline.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/binary/ptr.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/binary/read.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/binary/skip.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/format.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/read.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/mlp.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/glaze.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/binary.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/binary/header.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/inline.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/binary/ptr.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/binary/read.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/binary/skip.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/format.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/read.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/span.h \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/span.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/hash.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/xxh64.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/meta.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/reflection/get_name.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/reflection/to_tuple.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/type_traits.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/tuplet/tuple.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/string_literal.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/for_each.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/variant.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/parse.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/context.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/validate.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/opts.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/expected.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/span.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/hash.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/xxh64.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/meta.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/reflection/get_name.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/reflection/to_tuple.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/type_traits.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/tuplet/tuple.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/string_literal.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/for_each.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/variant.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/parse.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/context.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/validate.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/opts.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/expected.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/expected \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/stoui64.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/strod.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/stoui64.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/strod.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cfenv \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fenv.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fenv.h \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/common.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/bit_array.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/comment.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/hash_map.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/tuple.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/utility.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/file/file_ops.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/dump.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/write.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/reflection/reflect.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/binary/write.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/json_ptr.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/common.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/bit_array.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/comment.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/hash_map.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/tuple.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/utility.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/file/file_ops.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/dump.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/write.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/reflection/reflect.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/binary/write.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/json_ptr.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/any \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/read.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/read.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ranges \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/all.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/compose.h \
@@ -1386,41 +1386,41 @@ CMakeFiles/ml_ckks_math.dir/main.cc.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/transform_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/views.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/istream_view.h \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/json_t.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/skip.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/ptr.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/csv.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/csv/read.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/csv/write.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/core/write_chars.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/dtoa.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/util/itoa.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/custom.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/write.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/ptr.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/invoke.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/manage.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/ndjson.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/prettify.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/quoted.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/raw_string.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/json/schema.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/array.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/deque.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/functional.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/list.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/json_t.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/skip.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/ptr.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/csv.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/csv/read.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/csv/write.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/core/write_chars.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/dtoa.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/util/itoa.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/custom.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/write.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/ptr.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/invoke.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/manage.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/ndjson.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/prettify.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/quoted.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/raw_string.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/json/schema.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/array.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/deque.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/functional.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/list.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/map.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/optional.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/shared_ptr.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/string.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/tuple.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/unique_ptr.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/unordered_map.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/variant.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/std/vector.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/tuplet.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/api/type_support.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/glaze/record/recorder.hpp \
-  /Users/bellian/CEPP/ml_ckks_math/fhe_act.hpp
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/map.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/optional.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/shared_ptr.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/string.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/tuple.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/unique_ptr.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/unordered_map.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/variant.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/std/vector.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/tuplet.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/api/type_support.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/glaze/record/recorder.hpp \
+  /Users/bellian/CEPP/FHE-Math-For-DL/fhe_act.hpp

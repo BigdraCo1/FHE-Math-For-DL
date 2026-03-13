@@ -1,4 +1,4 @@
-# Install script for directory: /Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src
+# Install script for directory: /Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,22 +38,22 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "glaze_Development" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/include/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "glaze_Development" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/glaze" TYPE FILE RENAME "glazeConfig.cmake" FILES "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src/cmake/install-config.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/glaze" TYPE FILE RENAME "glazeConfig.cmake" FILES "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src/cmake/install-config.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "glaze_Development" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/glaze" TYPE FILE FILES "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-build/glazeConfigVersion.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/glaze" TYPE FILE FILES "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build/glazeConfigVersion.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "glaze_Development" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/glaze/glazeTargets.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/glaze/glazeTargets.cmake"
-         "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-build/CMakeFiles/Export/4060b7be0bf29cefc5b631f973b7eb37/glazeTargets.cmake")
+         "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build/CMakeFiles/Export/4060b7be0bf29cefc5b631f973b7eb37/glazeTargets.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/glaze/glazeTargets-*.cmake")
       if(_cmake_old_config_files)
@@ -66,12 +66,12 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "glaze_Development" OR NOT CMAKE_INSTALL_COM
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/glaze" TYPE FILE FILES "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-build/CMakeFiles/Export/4060b7be0bf29cefc5b631f973b7eb37/glazeTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/glaze" TYPE FILE FILES "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build/CMakeFiles/Export/4060b7be0bf29cefc5b631f973b7eb37/glazeTargets.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-build/install_local_manifest.txt"
+  file(WRITE "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
