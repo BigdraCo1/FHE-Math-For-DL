@@ -46,7 +46,6 @@ int main() {
     // EVEN --> -q/2 < indexLists <= q/2
     // ODD  --> -(q-1)/2 <= indexLists <= (q-1)/2
     const std::vector<int> indexLists = gen_rot_keys(batchSize);
-    std::cout << indexLists << std::endl;
     cc->EvalRotateKeyGen(keys.secretKey, indexLists);
 
     auto print_ct = [&](const std::string& label, const Ciphertext<DCRTPoly>& ct, int len) {
