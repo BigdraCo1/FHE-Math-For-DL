@@ -2,6 +2,6 @@
 # The patch step will be re-executed if anything in this file changes.
 # No other meaning or use of this file is supported.
 
-command (connected)=/opt/homebrew/bin/cmake;-Dcan_fetch=YES;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-subbuild/glaze-populate-prefix/tmp/glaze-populate-gitupdate.cmake
-command (disconnected)=/opt/homebrew/bin/cmake;-Dcan_fetch=NO;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-subbuild/glaze-populate-prefix/tmp/glaze-populate-gitupdate.cmake
-work_dir=/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src
+command (connected)=/opt/homebrew/bin/cmake;-Dcan_fetch=YES;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-subbuild/glaze-populate-prefix/tmp/glaze-populate-gitupdate.cmake
+command (disconnected)=/opt/homebrew/bin/cmake;-Dcan_fetch=NO;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-subbuild/glaze-populate-prefix/tmp/glaze-populate-gitupdate.cmake
+work_dir=/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src

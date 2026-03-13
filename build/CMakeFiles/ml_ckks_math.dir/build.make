@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bellian/CEPP/ml_ckks_math
+CMAKE_SOURCE_DIR = /Users/bellian/CEPP/FHE-Math-For-DL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bellian/CEPP/ml_ckks_math/build
+CMAKE_BINARY_DIR = /Users/bellian/CEPP/FHE-Math-For-DL/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ml_ckks_math.dir/depend.make
@@ -73,32 +73,32 @@ CMakeFiles/ml_ckks_math.dir/codegen:
 .PHONY : CMakeFiles/ml_ckks_math.dir/codegen
 
 CMakeFiles/ml_ckks_math.dir/main.cc.o: CMakeFiles/ml_ckks_math.dir/flags.make
-CMakeFiles/ml_ckks_math.dir/main.cc.o: /Users/bellian/CEPP/ml_ckks_math/main.cc
+CMakeFiles/ml_ckks_math.dir/main.cc.o: /Users/bellian/CEPP/FHE-Math-For-DL/main.cc
 CMakeFiles/ml_ckks_math.dir/main.cc.o: CMakeFiles/ml_ckks_math.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bellian/CEPP/ml_ckks_math/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ml_ckks_math.dir/main.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ml_ckks_math.dir/main.cc.o -MF CMakeFiles/ml_ckks_math.dir/main.cc.o.d -o CMakeFiles/ml_ckks_math.dir/main.cc.o -c /Users/bellian/CEPP/ml_ckks_math/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bellian/CEPP/FHE-Math-For-DL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ml_ckks_math.dir/main.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ml_ckks_math.dir/main.cc.o -MF CMakeFiles/ml_ckks_math.dir/main.cc.o.d -o CMakeFiles/ml_ckks_math.dir/main.cc.o -c /Users/bellian/CEPP/FHE-Math-For-DL/main.cc
 
 CMakeFiles/ml_ckks_math.dir/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ml_ckks_math.dir/main.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bellian/CEPP/ml_ckks_math/main.cc > CMakeFiles/ml_ckks_math.dir/main.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bellian/CEPP/FHE-Math-For-DL/main.cc > CMakeFiles/ml_ckks_math.dir/main.cc.i
 
 CMakeFiles/ml_ckks_math.dir/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ml_ckks_math.dir/main.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bellian/CEPP/ml_ckks_math/main.cc -o CMakeFiles/ml_ckks_math.dir/main.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bellian/CEPP/FHE-Math-For-DL/main.cc -o CMakeFiles/ml_ckks_math.dir/main.cc.s
 
 CMakeFiles/ml_ckks_math.dir/mlp.cc.o: CMakeFiles/ml_ckks_math.dir/flags.make
-CMakeFiles/ml_ckks_math.dir/mlp.cc.o: /Users/bellian/CEPP/ml_ckks_math/mlp.cc
+CMakeFiles/ml_ckks_math.dir/mlp.cc.o: /Users/bellian/CEPP/FHE-Math-For-DL/mlp.cc
 CMakeFiles/ml_ckks_math.dir/mlp.cc.o: CMakeFiles/ml_ckks_math.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bellian/CEPP/ml_ckks_math/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ml_ckks_math.dir/mlp.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ml_ckks_math.dir/mlp.cc.o -MF CMakeFiles/ml_ckks_math.dir/mlp.cc.o.d -o CMakeFiles/ml_ckks_math.dir/mlp.cc.o -c /Users/bellian/CEPP/ml_ckks_math/mlp.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bellian/CEPP/FHE-Math-For-DL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ml_ckks_math.dir/mlp.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ml_ckks_math.dir/mlp.cc.o -MF CMakeFiles/ml_ckks_math.dir/mlp.cc.o.d -o CMakeFiles/ml_ckks_math.dir/mlp.cc.o -c /Users/bellian/CEPP/FHE-Math-For-DL/mlp.cc
 
 CMakeFiles/ml_ckks_math.dir/mlp.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ml_ckks_math.dir/mlp.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bellian/CEPP/ml_ckks_math/mlp.cc > CMakeFiles/ml_ckks_math.dir/mlp.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bellian/CEPP/FHE-Math-For-DL/mlp.cc > CMakeFiles/ml_ckks_math.dir/mlp.cc.i
 
 CMakeFiles/ml_ckks_math.dir/mlp.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ml_ckks_math.dir/mlp.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bellian/CEPP/ml_ckks_math/mlp.cc -o CMakeFiles/ml_ckks_math.dir/mlp.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bellian/CEPP/FHE-Math-For-DL/mlp.cc -o CMakeFiles/ml_ckks_math.dir/mlp.cc.s
 
 # Object files for target ml_ckks_math
 ml_ckks_math_OBJECTS = \
@@ -115,7 +115,7 @@ ml_ckks_math: /usr/local/lib/libOPENFHEpke.1.4.2.dylib
 ml_ckks_math: /usr/local/lib/libOPENFHEbinfhe.1.4.2.dylib
 ml_ckks_math: /usr/local/lib/libOPENFHEcore.1.4.2.dylib
 ml_ckks_math: CMakeFiles/ml_ckks_math.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bellian/CEPP/ml_ckks_math/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ml_ckks_math"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bellian/CEPP/FHE-Math-For-DL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ml_ckks_math"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ml_ckks_math.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +127,6 @@ CMakeFiles/ml_ckks_math.dir/clean:
 .PHONY : CMakeFiles/ml_ckks_math.dir/clean
 
 CMakeFiles/ml_ckks_math.dir/depend:
-	cd /Users/bellian/CEPP/ml_ckks_math/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bellian/CEPP/ml_ckks_math /Users/bellian/CEPP/ml_ckks_math /Users/bellian/CEPP/ml_ckks_math/build /Users/bellian/CEPP/ml_ckks_math/build /Users/bellian/CEPP/ml_ckks_math/build/CMakeFiles/ml_ckks_math.dir/DependInfo.cmake "--color=$(COLOR)" ml_ckks_math
+	cd /Users/bellian/CEPP/FHE-Math-For-DL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bellian/CEPP/FHE-Math-For-DL /Users/bellian/CEPP/FHE-Math-For-DL /Users/bellian/CEPP/FHE-Math-For-DL/build /Users/bellian/CEPP/FHE-Math-For-DL/build /Users/bellian/CEPP/FHE-Math-For-DL/build/CMakeFiles/ml_ckks_math.dir/DependInfo.cmake "--color=$(COLOR)" ml_ckks_math
 .PHONY : CMakeFiles/ml_ckks_math.dir/depend
 

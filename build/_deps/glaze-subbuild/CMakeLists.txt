@@ -28,8 +28,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(glaze-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/stephenberry/glaze.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v2.3.1"
-                    SOURCE_DIR          "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-src"
-                    BINARY_DIR          "/Users/bellian/CEPP/ml_ckks_math/build/_deps/glaze-build"
+                    SOURCE_DIR          "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-src"
+                    BINARY_DIR          "/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/bellian/CEPP/ml_ckks_math/main.cc" "CMakeFiles/ml_ckks_math.dir/main.cc.o" "gcc" "CMakeFiles/ml_ckks_math.dir/main.cc.o.d"
-  "/Users/bellian/CEPP/ml_ckks_math/mlp.cc" "CMakeFiles/ml_ckks_math.dir/mlp.cc.o" "gcc" "CMakeFiles/ml_ckks_math.dir/mlp.cc.o.d"
+  "/Users/bellian/CEPP/FHE-Math-For-DL/main.cc" "CMakeFiles/ml_ckks_math.dir/main.cc.o" "gcc" "CMakeFiles/ml_ckks_math.dir/main.cc.o.d"
+  "/Users/bellian/CEPP/FHE-Math-For-DL/mlp.cc" "CMakeFiles/ml_ckks_math.dir/mlp.cc.o" "gcc" "CMakeFiles/ml_ckks_math.dir/mlp.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
