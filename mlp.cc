@@ -15,44 +15,36 @@ void MLP::add_layer(
 Ciphertext<DCRTPoly> MLP::linear_layer(
     const Ciphertext<DCRTPoly>& ct_input,
     const LinearLayer& layer,
-    const CryptoContext<DCRTPoly>& cc
+    const CryptoContext<DCRTPoly>& cc,
+    bool repeat_input = false
 ) {
     int batch = (int)cc->GetEncodingParams()->GetBatchSize();
 
-    // Step 1 — repeat input to fill all batch slots
     Ciphertext<DCRTPoly> ct_in = ct_input;
-    for (int offset = layer.in_dim; offset < batch; offset += layer.in_dim) {
-        int rot = -offset;
-        if (rot < -(batch/2)) rot += batch;  // normalize
-        std::cout << "ROTATE " << rot << std::endl;
-        ct_in = cc->EvalAdd(ct_in, cc->EvalRotate(ct_input, rot));
+    if (repeat_input) {
+        for (int offset = layer.in_dim; offset < batch; offset += layer.in_dim) {
+            int rot = -offset;
+            if (rot < -(batch/2)) rot += batch;
+            ct_in = cc->EvalAdd(ct_in, cc->EvalRotate(ct_input, rot));
+        }
     }
 
-    std::cout << "REPEATED DONE!" << std::endl;
-
-    // Step 2 — precompute diagonals
     std::vector<std::vector<double>> diags(layer.in_dim, std::vector<double>(layer.out_dim));
     for (int k = 0; k < layer.in_dim; k++)
         for (int i = 0; i < layer.out_dim; i++)
             diags[k][i] = layer.weights[i][(i + k) % layer.in_dim];
 
-    std::cout << "DIAGS DONE!" << std::endl;
-
-    // Step 3 — accumulate
     Ciphertext<DCRTPoly> ct_result;
     bool first = true;
     for (int k = 0; k < layer.in_dim; k++) {
         int rot_k = k;
         if (rot_k > batch / 2) rot_k -= batch;
-
         auto ct_rot = (k == 0) ? ct_in : cc->EvalRotate(ct_in, rot_k);
-        auto ct_mul = cc->EvalMult(ct_rot,
-                         cc->MakeCKKSPackedPlaintext(diags[k]));
+        auto ct_mul = cc->EvalMult(ct_rot, cc->MakeCKKSPackedPlaintext(diags[k]));
         if (first) { ct_result = ct_mul; first = false; }
         else         ct_result = cc->EvalAdd(ct_result, ct_mul);
     }
 
-    // Step 4 — add bias
     Plaintext pt_bias = cc->MakeCKKSPackedPlaintext(layer.bias);
     ct_result = cc->EvalAdd(ct_result, pt_bias);
     return ct_result;
@@ -104,56 +96,17 @@ void MLP::load_weights(const std::string& filename) {
 }
 
 Ciphertext<DCRTPoly> MLP::forward(const Ciphertext<DCRTPoly>& input, const CryptoContext<DCRTPoly>& cc) {
+    // Linear(4,8), Linear(8,16), Linear(16,3)
     Ciphertext<DCRTPoly> ct = input;
     std::cout << "FORWARDING STARTED"<< std::endl;
-    ct = linear_layer(ct, layers[0], cc);
+    ct = linear_layer(ct, layers[0], cc, true);
     std::cout << "LAYER 1 COMPLETED" << std::endl;
-    ct = polynomial_sigmoid_fhe(ct, cc, SIGMOID_COEFFS);
-    ct = linear_layer(ct, layers[1], cc);
-    std::cout << "LAYER 2 COMPLETED" << std::endl;
-    ct = polynomial_sigmoid_fhe(ct, cc, SIGMOID_COEFFS);
-    ct = linear_layer(ct, layers[2], cc);
-    return ct;
-}
-
-Ciphertext<DCRTPoly> MLP::fwd_linear1(const Ciphertext<DCRTPoly>& input, const CryptoContext<DCRTPoly>& cc) {
-    Ciphertext<DCRTPoly> ct = input;
-    ct = linear_layer(ct, layers[0], cc);
-    std::cout << "LAYER 1 COMPLETED" << std::endl;
-    return ct;
-}
-
-Ciphertext<DCRTPoly> MLP::fwd_sigmoid1(const Ciphertext<DCRTPoly>& input, const CryptoContext<DCRTPoly>& cc) {
-    Ciphertext<DCRTPoly> ct = input;
-    ct = polynomial_sigmoid_fhe(ct, cc, SIGMOID_COEFFS);
-    // mask out slots 8..15 — keep only first 8
-    std::vector<double> mask(16, 0.0);
-    for (int i = 0; i < 8; i++) mask[i] = 1.0;
-    std::cout << "MASK: " << mask << std::endl;
-
-    Plaintext pt_mask = cc->MakeCKKSPackedPlaintext(mask);
-    ct = cc->EvalMult(ct, pt_mask);  // depth +1
+    ct = polynomial_sigmoid_fhe(ct, cc, SIGMOID_COEFFS, 8);
     std::cout << "SIGMOID 1 COMPLETED" << std::endl;
-    return ct;
-}
-
-Ciphertext<DCRTPoly> MLP::fwd_linear2(const Ciphertext<DCRTPoly>& input, const CryptoContext<DCRTPoly>& cc) {
-    Ciphertext<DCRTPoly> ct = input;
     ct = linear_layer(ct, layers[1], cc);
     std::cout << "LAYER 2 COMPLETED" << std::endl;
-    return ct;
-}
-
-Ciphertext<DCRTPoly> MLP::fwd_sigmoid2(const Ciphertext<DCRTPoly>& input, const CryptoContext<DCRTPoly>& cc) {
-    Ciphertext<DCRTPoly> ct = input;
-    ct = polynomial_sigmoid_fhe(ct, cc, SIGMOID_COEFFS);
+    ct = polynomial_sigmoid_fhe(ct, cc, SIGMOID_COEFFS, 16);
     std::cout << "SIGMOID 2 COMPLETED" << std::endl;
-    return ct;
-}
-
-Ciphertext<DCRTPoly> MLP::fwd_linear3(const Ciphertext<DCRTPoly>& input, const CryptoContext<DCRTPoly>& cc) {
-    Ciphertext<DCRTPoly> ct = input;
     ct = linear_layer(ct, layers[2], cc);
-    std::cout << "LAYER 3 COMPLETED" << std::endl;
     return ct;
 }

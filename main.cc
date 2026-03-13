@@ -1,3 +1,4 @@
+#include <vector>
 #define PROFILE
 
 #include "openfhe.h"
@@ -8,10 +9,107 @@
 #include <iostream>
 #include <iomanip>
 #include <map>
+#include <chrono>
 
 using namespace lbcrypto;
 
+double evaluate(
+    MLP& mlp,
+    const CryptoContext<DCRTPoly>& cc,
+    const KeyPair<DCRTPoly>& keys,
+    const std::vector<std::vector<double>>& X,
+    const std::vector<double>& Y
+) {
+    int correct = 0;
+    int skipped = 0;
+    int total = (int)X.size();
+    int num_classes = 3;
+
+    // confusion matrix [actual][predicted]
+    std::vector<std::vector<int>> conf(num_classes, std::vector<int>(num_classes, 0));
+
+    for (int i = 0; i < total; i++) {
+        try {
+            Plaintext pt = cc->MakeCKKSPackedPlaintext(X[i]);
+            auto ct = cc->Encrypt(keys.publicKey, pt);
+            auto ct_out = mlp.forward(ct, cc);
+
+            Plaintext result;
+            cc->Decrypt(keys.secretKey, ct_out, &result);
+            result->SetLength(3);
+            std::vector<double> v = result->GetRealPackedValue();
+
+            int pred  = (int)std::distance(v.begin(), std::max_element(v.begin(), v.end()));
+            int label = (int)Y[i];
+
+            conf[label][pred]++;
+            if (pred == label) correct++;
+
+            std::cout << "sample " << i
+                      << " pred: " << pred
+                      << " label: " << label
+                      << (pred == label ? " ✓" : " ✗")
+                      << std::endl;
+
+        } catch (const std::exception& e) {
+            std::cout << "sample " << i << " SKIPPED: " << e.what() << std::endl;
+            skipped++;
+        }
+    }
+
+    int evaluated = total - skipped;
+    double accuracy = (double)correct / evaluated * 100.0;
+
+    // print confusion matrix
+    std::cout << "\n=== Confusion Matrix ===" << std::endl;
+    std::cout << "          pred:0  pred:1  pred:2" << std::endl;
+    for (int i = 0; i < num_classes; i++) {
+        std::cout << "actual:" << i << "  ";
+        for (int j = 0; j < num_classes; j++)
+            std::cout << std::setw(6) << conf[i][j] << "  ";
+        std::cout << std::endl;
+    }
+
+    // per class precision/recall
+    std::cout << "\n=== Per Class ===" << std::endl;
+    std::cout << std::setw(8) << "class"
+              << std::setw(10) << "precision"
+              << std::setw(10) << "recall" << std::endl;
+    for (int c = 0; c < num_classes; c++) {
+        int tp = conf[c][c];
+        int col_sum = 0, row_sum = 0;
+        for (int k = 0; k < num_classes; k++) {
+            col_sum += conf[k][c];  // predicted as c
+            row_sum += conf[c][k];  // actual c
+        }
+        double precision = col_sum > 0 ? (double)tp / col_sum * 100.0 : 0.0;
+        double recall    = row_sum > 0 ? (double)tp / row_sum * 100.0 : 0.0;
+        std::cout << std::setw(8) << c
+                  << std::setw(9) << std::fixed << std::setprecision(1) << precision << "%"
+                  << std::setw(9) << std::fixed << std::setprecision(1) << recall    << "%"
+                  << std::endl;
+    }
+
+    std::cout << "\nTotal:     " << total     << std::endl;
+    std::cout << "Skipped:   " << skipped    << std::endl;
+    std::cout << "Evaluated: " << evaluated  << std::endl;
+    std::cout << "Accuracy:  " << correct << "/" << evaluated
+              << " = " << accuracy << "%" << std::endl;
+
+    return accuracy;
+}
+
 const std::string filename = "/Users/bellian/CEPP/mlp/iris_weights.json";
+const std::string X_test_filename = "/Users/bellian/CEPP/mlp/X_test.json";
+const std::string Y_test_filename = "/Users/bellian/CEPP/mlp/Y_test.json";
+
+struct X_test {
+    std::vector<std::vector<double>> data;
+};
+
+struct Y_test {
+    std::vector<double> data;
+};
 
 std::vector<int> gen_rot_keys(int batchSize) {
     std::vector<int> keys;
@@ -22,7 +120,23 @@ std::vector<int> gen_rot_keys(int batchSize) {
     return keys;
 }
 
+template<typename T>
+void load_data(T& data, const std::string& filename) {
+    std::string buffer;
+    auto err = glz::read_file_json(data, filename, buffer);
+    if (err) {
+        std::cout << glz::format_error(err, buffer) << '\n';
+        return;
+    }
+}
+
 int main() {
+    X_test x;
+    load_data(x, X_test_filename);
+
+    Y_test y_test;
+    load_data(y_test, Y_test_filename);
+
     MLP mlp;
     mlp.load_weights(filename);
 
@@ -42,45 +156,13 @@ int main() {
 
     auto keys = cc->KeyGen();
     cc->EvalMultKeyGen(keys.secretKey);
-    // Rot Keys Gen
-    // EVEN --> -q/2 < indexLists <= q/2
-    // ODD  --> -(q-1)/2 <= indexLists <= (q-1)/2
     const std::vector<int> indexLists = gen_rot_keys(batchSize);
     cc->EvalRotateKeyGen(keys.secretKey, indexLists);
-
-    auto print_ct = [&](const std::string& label, const Ciphertext<DCRTPoly>& ct, int len) {
-        Plaintext pt;
-        cc->Decrypt(keys.secretKey, ct, &pt);
-        pt->SetLength(len);
-        std::cout << label << ": " << pt << std::endl;
-    };
-
-    std::vector<double> x1 = {-0.1331,  1.6508, -1.1614, -1.1791};
-    // Encode
-    Plaintext ptxt1 = cc->MakeCKKSPackedPlaintext(x1);
-    std::cout << "Input x1: " << ptxt1 << std::endl;
-
-    // Encrypt
-    auto c1 = cc->Encrypt(keys.publicKey, ptxt1);
-
-    // Forward
-    // auto cPred = mlp.forward(c1, cc);
-    auto ct = mlp.fwd_linear1(c1, cc);  print_ct("Linear 1", ct, 16);
-    ct = mlp.fwd_sigmoid1(ct, cc);      print_ct("Sigmoid 1", ct, 16);
-    ct = mlp.fwd_linear2(ct, cc);       print_ct("Linear 2", ct, 16);
-    ct = mlp.fwd_sigmoid2(ct, cc);      print_ct("Sigmoid 2", ct, 16);
-    ct = mlp.fwd_linear3(ct, cc);       print_ct("Linear 3", ct, 3);
-
-    // Decryption and output
-    Plaintext result;
-    // We set the cout precision to 8 decimal digits for a nicer output.
-    // If you want to see the error/noise introduced by CKKS, bump it up
-    // to 15 and it should become visible.
-    std::cout.precision(8);
-
-    cc->Decrypt(keys.secretKey, ct, &result);
-    result->SetLength(3);
-    std::cout << result << std::endl;
+    auto start = std::chrono::high_resolution_clock::now();
+    evaluate(mlp, cc, keys, x.data, y_test.data);
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << "Time: " << elapsed.count() << " seconds\n";
 
     return 0;
 }
