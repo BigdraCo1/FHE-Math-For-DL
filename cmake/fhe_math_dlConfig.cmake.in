@@ -1,0 +1,6 @@
+# fhe_math_dlConfig.cmake.in
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/fhe_math_dlTargets.cmake")
+
+check_required_components(fhe_math_dl)

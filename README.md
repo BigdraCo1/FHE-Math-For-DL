@@ -24,12 +24,18 @@ Input (encrypted) → Linear(4→8) → Sigmoid → Linear(8→16) → Sigmoid �
 
 ```
 .
-├── main.cc         # Entry point: loads data/weights, sets up FHE context, runs evaluation
-├── mlp.cc          # MLP class: linear layer (diagonal method), weight loading, forward pass
-├── mlp.hpp         # MLP and LinearLayer struct declarations
-├── fhe_act.hpp     # FHE-compatible activation functions (Sigmoid, SiLU via polynomial approximation)
-├── CMakeLists.txt  # Build configuration (OpenFHE + glaze)
-└── execute.sh      # Helper script: configure, build, and run
+├── include/
+│   └── fhe_math_dl/
+│       ├── mlp.hpp          # MLP class + LinearLayer struct (public API)
+│       └── fhe_act.hpp      # FHE activation functions (Sigmoid, SiLU)
+├── src/
+│   └── mlp.cc               # MLP implementation
+├── examples/
+│   └── iris_demo.cc         # Full Iris classification demo (entry point)
+├── cmake/
+│   └── fhe_math_dlConfig.cmake.in  # CMake package config template
+├── CMakeLists.txt           # Builds libfhe_math_dl + iris_demo
+└── execute.sh               # Helper script: configure, build, and run demo
 ```
 
 ---
@@ -78,7 +84,7 @@ The program expects pre-trained MLP weights and test data as JSON files. By defa
 /Users/bellian/CEPP/mlp/Y_test.json         # test labels
 ```
 
-> You can change these paths in `main.cc` (constants at the top of the file).
+> You can change these paths in `examples/iris_demo.cc` (constants at the top of the file).
 
 **Expected JSON formats:**
 
@@ -123,10 +129,20 @@ cmake -B build
 cd build
 cmake ..
 make -j$(sysctl -n hw.ncpu)
-sudo -E ./ml_ckks_math
+sudo -E ./iris_demo
 ```
 
 > `sudo -E` is used to preserve environment variables (e.g., OpenFHE library paths).
+
+### Install the library
+
+```bash
+cmake -B build -DCMAKE_INSTALL_PREFIX=~/.local
+cmake --build build -j$(sysctl -n hw.ncpu)
+cmake --install build
+```
+
+This installs headers to `include/fhe_math_dl/` and the static library `libfhe_math_dl.a` to `lib/`.
 
 ---
 
@@ -158,7 +174,7 @@ ReLU is not FHE-friendly (it's not a polynomial). Instead, the sigmoid function 
 
 Powers of the ciphertext are computed efficiently using a binary-exponentiation-style strategy over even powers.
 
-**SiLU** (`x · σ(x)`) is also available in `fhe_act.hpp` as an alternative.
+**SiLU** (`x · σ(x)`) is also available in `include/fhe_math_dl/fhe_act.hpp` as an alternative.
 
 ---
 
@@ -192,9 +208,29 @@ Time: 42.5 seconds
 
 ---
 
+## Using as a Library
+
+After installing, consume `fhe_math_dl` from another CMake project:
+
+```cmake
+find_package(OpenFHE REQUIRED PATHS /usr/local/lib/OpenFHE)
+find_package(fhe_math_dl REQUIRED)
+
+target_link_libraries(my_project PRIVATE fhe_math_dl::fhe_math_dl)
+```
+
+Then include the headers:
+
+```cpp
+#include "fhe_math_dl/mlp.hpp"
+#include "fhe_math_dl/fhe_act.hpp"
+```
+
+---
+
 ## Limitations & Notes
 
 - **Performance**: FHE inference is orders of magnitude slower than plaintext inference. Each sample takes several seconds.
 - **Precision**: CKKS is approximate; some samples may throw exceptions due to noise accumulation at high multiplicative depth and are counted as "skipped".
 - **Batch size**: The CKKS batch size is 16 slots (powers-of-two requirement), limiting parallelism within a single ciphertext.
-- **Hardcoded paths**: Data/weight file paths are currently hardcoded in `main.cc`.
+- **Hardcoded paths**: Data/weight file paths are currently hardcoded in `examples/iris_demo.cc`.
