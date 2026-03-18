@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/bellian/CEPP/FHE-Math-For-DL/build/cmake_install.cmake",
-		"/Users/bellian/CEPP/FHE-Math-For-DL/build/_deps/glaze-build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
